@@ -28,3 +28,21 @@ body {
 #dark-toggle:checked ~ label div.toggle-circle {
     @apply translate-x-3;
 }
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.animate-blink {
+    animation: blink 1s step-start infinite;
+}
+
+/* Menyesuaikan ukuran kursor dengan teks */
+#cursor {
+    height: 0.8em;  /* Sesuaikan tinggi kursor dengan ukuran font */
+    width: 0.1em;  /* Lebar kursor yang lebih kecil dari tinggi, tetapi masih terlihat jelas */
+    margin-top: 2px; /* Menggeser kursor sedikit ke bawah agar lebih sejajar */
+    margin-left: 2px; /* Menambah jarak antara kursor dan teks */
+}

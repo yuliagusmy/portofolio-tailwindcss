@@ -53,3 +53,46 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
 } else {
     darkToggle.checked = false;
 }
+
+// Daftar kata yang akan ditampilkan
+const words = ["Front End Web Dev", "Graphic Designer", "Traveler", "Typography Enthusiast"];
+const typingText = document.getElementById("typing-text");
+
+let wordIndex = 0; // Indeks kata saat ini
+let charIndex = 0; // Indeks huruf saat ini
+let isDeleting = false; // Status menghapus teks
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+    const currentLength = typingText.innerText.length;
+
+    if (isDeleting) {
+        // Hapus karakter satu per satu
+        typingText.innerText = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        // Tulis karakter satu per satu
+        typingText.innerText = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    // Tentukan durasi mengetik atau menghapus
+    let typingSpeed = isDeleting ? 50 : 100;
+
+    // Jika sudah selesai mengetik atau menghapus
+    if (!isDeleting && charIndex === currentWord.length) {
+        typingSpeed = 2000; // Tunggu sebelum mulai menghapus
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length; // Beralih ke kata berikutnya
+        typingSpeed = 500; // Jeda sebelum mengetik kata baru
+    }
+
+    setTimeout(typeEffect, typingSpeed); // Jalankan fungsi lagi
+}
+
+// Jalankan fungsi ketika halaman dimuat
+document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+});
