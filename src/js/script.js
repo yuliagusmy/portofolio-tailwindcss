@@ -102,3 +102,29 @@ function typeEffect() {
 document.addEventListener("DOMContentLoaded", () => {
   typeEffect();
 });
+
+// Portofolio
+function showPortfolio(category) {
+  // Get all project cards and hide them
+  const allCards = document.querySelectorAll(".project-card");
+  allCards.forEach((card) => {
+    card.style.display = "none";
+  });
+
+  // Show the specific category of cards
+  const selectedCards = document.querySelectorAll(`.${category}`);
+  selectedCards.forEach((card) => {
+    card.style.display = "block";
+  });
+
+  // Change the title of the portfolio container
+  const title = document.querySelector("#portfolioContainer h2");
+  title.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+}
+
+// Show all cards initially
+document.addEventListener("DOMContentLoaded", function () {
+  showPortfolio("website");
+  // showPortfolio("graphicDesign");
+  // showPortfolio("typography");
+});
