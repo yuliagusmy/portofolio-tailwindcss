@@ -125,6 +125,6 @@ function showPortfolio(category) {
 // Show all cards initially
 document.addEventListener("DOMContentLoaded", function () {
   showPortfolio("website");
-  // showPortfolio("graphicDesign");
-  // showPortfolio("typography");
+  showPortfolio("graphicDesign");
+  showPortfolio("typography");
 });

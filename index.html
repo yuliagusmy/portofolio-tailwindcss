@@ -19,67 +19,54 @@
 
 <body>
     <!-- Header Start -->
-    <header class="fixed top-0 left-0 w-full flex items-center z-10 px-4 lg:px-0">
-        <div class="coutainer">
-            <div class="flex items-center justify-between">
-                <div class="px-4">
-                    <div class="flex items-right">
-                        <a href="#home" class="font-bold text-lg text-primary py-6 lg:px-10">MieAyammm</a>
-                        <button id="hamburger" name="hamburger" type="button"
-                            class="block absolute right-4 lg:hidden z-10 py-4">
-                            <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                            <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                            <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-                        </button>
-                        <nav id="nav-menu"
-                            class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-600 lg:dark:bg-transparent">
-                            <ul class="block lg:flex">
-                                <li class="group:">
-                                    <a href="#home"
-                                        class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
-                                </li>
-                                <li class="group:">
-                                    <a href="#about"
-                                        class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang
-                                        Saya</a>
-                                </li>
-                                <li class="group:">
-                                    <a href="#portofolio"
-                                        class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Portofolio</a>
-                                </li>
-                                <li class="group:">
-                                    <a href="#clients"
-                                        class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Clients</a>
-                                </li>
-                                <li class="group:">
-                                    <a href="#blog"
-                                        class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Blog</a>
-                                </li>
-                                <li class="group:">
-                                    <a href="#contact"
-                                        class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Kontak</a>
-                                </li>
-                                <li class="flex items-center pl-8 mt-3 lg:mt-0">
-                                    <div class="flex">
-                                        <span class="mr-2 text-sm text-slate-500">Light</span>
-                                        <input type="checkbox" class="hidden" id="dark-toggle" />
-                                        <label for="dark-toggle">
-                                            <div
-                                                class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                                                <div
-                                                    class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
-                                                </div>
-                                            </div>
-                                        </label>
-                                        <span class="ml-2 text-sm text-slate-500">Dark</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
+    <header class="fixed top-0 left-0 z-10 w-full">
+        <div>
+            <a href="#home" class="font-bold text-xl text-primary pl-4 block lg:hidden">MieAyammm</a>
+            <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden z-10 py-4">
+                <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
         </div>
+        <nav id="nav-menu"
+            class="hidden py-5 px-10 container mx-auto bg-white shadow-lg rounded-lg w-full right-4 top-full lg:flex lg:items-center lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:justify-between lg:rounded-none dark:bg-dark dark:shadow-slate-600 lg:dark:bg-transparent">
+            <a href="#home" class="font-bold text-xl text-primary pl-4 hidden lg:block">MieAyammm</a>
+            <ul class="block lg:flex lg:justify-evenly lg:items-center gap-10">
+                <li class="group:">
+                    <a href="#home" class="text-2xl text-dark flex group-hover:text-primary dark:text-white">Beranda</a>
+                </li>
+                <li class="group:">
+                    <a href="#about" class="text-2xl text-dark flex group-hover:text-primary dark:text-white">Tentang
+                        Saya</a>
+                </li>
+                <li class="group:">
+                    <a href="#portofolio"
+                        class="text-2xl text-dark flex group-hover:text-primary dark:text-white">Portofolio</a>
+                </li>
+                <li class="group:">
+                    <a href="#clients"
+                        class="text-2xl text-dark flex group-hover:text-primary dark:text-white">Clients</a>
+                </li>
+                <li class="group:">
+                    <a href="#blog" class="text-2xl text-dark flex group-hover:text-primary dark:text-white">Blog</a>
+                </li>
+                <li class="group:">
+                    <a href="#contact"
+                        class="text-2xl text-dark flex group-hover:text-primary dark:text-white">Kontak</a>
+                </li>
+            </ul>
+            <div class="flex">
+                <span class="mr-2 text-sm text-slate-500">Light</span>
+                <input type="checkbox" class="hidden" id="dark-toggle" />
+                <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                        </div>
+                    </div>
+                </label>
+                <span class="ml-2 text-sm text-slate-500">Dark</span>
+            </div>
+        </nav>
     </header>
     <!-- Header End -->
     <!-- Hero Section Start -->
@@ -106,7 +93,7 @@
                         class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:bg-sky-700 transition duration-300 ease-in-out">Hubungi
                         Saya</a>
                 </div>
-                <div class="w-full self-end px-4  h-52 lg:w-1/2 mt-5">
+                <div class="w-full self-end px-4 lg:w-1/2 mt-5">
                     <div class="relative lg:right-0">
                         <img src="src/img/profile-pic.png" alt="profile-pic" class="max-w-full mx-auto lg:z-[9999]">
                     </div>
@@ -296,11 +283,11 @@
                             Website
                         </h2>
                     </div>
-                    <div class="w-full px-4 flex flex-wrap justify-center lg:w-10/12 lg:mx-auto xl:w-10/12 xl:mx-auto">
+                    <div class="w-full px-4 justify-center lg:w-10/12 lg:mx-auto xl:w-10/12 xl:mx-auto">
                         <!-- Project Website -->
-                        <div class="project-card website flex flex-wrap justify-center gap-8">
+                        <div class="grid grid-cols-2 justify-center gap-3">
                             <!-- Project 1 -->
-                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-1/2 p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-full p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
                                 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                                 <img src="src/img/portofolio/1.png" alt="Project 1" class="w-full h-auto rounded-t-lg">
                                 <div class="p-4 bg-white dark:bg-dark">
@@ -314,7 +301,7 @@
                             </div>
 
                             <!-- Project 2 -->
-                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-1/2 p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-full p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
                                 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                                 <img src="src/img/portofolio/2.png" alt="Project 2" class="w-full h-auto rounded-t-lg">
                                 <div class="p-4 bg-white dark:bg-gray-800">
@@ -328,7 +315,7 @@
                             </div>
 
                             <!-- Project 3 -->
-                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-1/2 p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-full p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
                                 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                                 <img src="src/img/portofolio/3.png" alt="Project 3" class="w-full h-auto rounded-t-lg">
                                 <div class="p-4 bg-white dark:bg-gray-800">
@@ -342,7 +329,7 @@
                             </div>
 
                             <!-- Project 4 -->
-                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-1/2 p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-full p-4 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
                                 data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                                 <img src="src/img/portofolio/4.png" alt="Project 4" class="w-full h-auto rounded-t-lg">
                                 <div class="p-4 bg-white dark:bg-gray-800">
