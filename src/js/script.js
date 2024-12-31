@@ -179,3 +179,45 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
       showImage();
   }, 5000); // Ganti gambar setiap 5 detik
 });
+
+// Scroll otomatis ke kanan
+const scrollContainer = document.querySelector("#typography .flex");
+let isScrolling = true;
+
+function autoScroll() {
+  if (!isScrolling) return;
+  scrollContainer.scrollBy({ left: 10, behavior: "smooth" });
+
+  // Reset ke awal jika sudah mencapai akhir
+  if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+    scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+  }
+}
+
+// Interval untuk scrolling otomatis
+setInterval(autoScroll, 5); // Angka lebih kecil = scroll lebih cepat
+
+// Hentikan scroll otomatis saat pengguna menginteraksi
+scrollContainer.addEventListener("mouseenter", () => (isScrolling = false));
+scrollContainer.addEventListener("mouseleave", () => (isScrolling = true));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollContainer = document.querySelector(".scroll-loop");
+
+  // Gandakan elemen untuk menciptakan efek seamless
+  scrollContainer.innerHTML += scrollContainer.innerHTML;
+
+  // Hitung lebar total semua elemen di dalam scroll-loop
+  const scrollWidth = scrollContainer.scrollWidth / 2;
+
+  // Periksa ukuran layar
+  if (window.innerWidth > 768) {
+      // Desktop: Aktifkan animasi scroll
+      scrollContainer.style.animation = `scroll-infinite ${scrollWidth / 100}s linear infinite`;
+  } else {
+      // Mobile: Hapus animasi
+      scrollContainer.style.animation = "none";
+  }
+});
+
+
