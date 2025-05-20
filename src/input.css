@@ -2,15 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base Styles */
 body {
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
+/* Navbar Styles */
 .navbar-fixed {
     @apply fixed z-[9999] bg-white bg-opacity-70 backdrop-blur-sm dark:bg-dark dark:bg-opacity-50;
     box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.2);
 }
 
+/* Hamburger Menu Styles */
 .hamburger-line {
     @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-white;
 }
@@ -18,91 +21,82 @@ body {
 .hamburger-active > span:nth-child(1) {
     @apply rotate-45;
 }
+
 .hamburger-active > span:nth-child(2) {
     @apply scale-0;
 }
+
 .hamburger-active > span:nth-child(3) {
     @apply -rotate-45;
 }
 
+/* Dark Mode Toggle */
 #dark-toggle:checked ~ label div.toggle-circle {
     @apply translate-x-3;
 }
 
+/* Typing Animation */
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 }
 
 .animate-blink {
     animation: blink 1s step-start infinite;
 }
 
-/* Menyesuaikan ukuran kursor dengan teks */
 #cursor {
-    height: 0.8em;  /* Sesuaikan tinggi kursor dengan ukuran font */
-    width: 0.1em;  /* Lebar kursor yang lebih kecil dari tinggi, tetapi masih terlihat jelas */
-    margin-top: 2px; /* Menggeser kursor sedikit ke bawah agar lebih sejajar */
-    margin-left: 2px; /* Menambah jarak antara kursor dan teks */
+    height: 0.8em;
+    width: 0.1em;
+    margin-top: 2px;
+    margin-left: 2px;
 }
 
-@layer utilities {
-    .mask-fade {
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    }
-  }
+/* Scroll Container Styles */
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
 
-  .scroll-container::-webkit-scrollbar {
-    display: none; /* Sembunyikan scrollbar */
-  }
-  .scroll-container {
-    scrollbar-width: none; /* Firefox */
-  }
+.scroll-container {
+    scrollbar-width: none;
+}
 
-/* Styling untuk Infinite Scroll */
+/* Infinite Scroll Animation */
 .scroll-loop {
     display: flex;
-    gap: 1.5rem; /* Jarak antar elemen */
-    animation: scroll-infinite 20s linear infinite; /* Loop animasi */
-    will-change: transform; /* Optimisasi performa */
+    gap: 1.5rem;
+    animation: scroll-infinite 20s linear infinite;
+    will-change: transform;
 }
 
 @keyframes scroll-infinite {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%); /* Geser semua elemen sepenuhnya */
-    }
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
 
-
-/* Desktop View: Gambar di-scroll horizontal */
-.scroll-loop {
-    display: flex;
-    gap: 1.5rem; /* Jarak antar elemen */
-    animation: scroll-infinite 20s linear infinite; /* Loop animasi */
-    will-change: transform; /* Optimisasi performa */
-}
-
+/* Container Styles */
 .container {
-    overflow: hidden; /* Sembunyikan elemen di luar batas container */
+    overflow: hidden;
 }
 
-/* Mobile View: Tampilkan 3 gambar per baris */
+/* Utility Classes */
+@layer utilities {
+    .mask-fade {
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .scroll-loop {
-        display: grid; /* Ubah menjadi grid */
-        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 kolom */
-        gap: 1rem; /* Jarak antar gambar */
-        animation: none; /* Matikan animasi di mobile */
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        animation: none;
     }
 
     .scroll-loop img {
-        width: 100%; /* Gambar memenuhi kolom */
+        width: 100%;
         height: auto;
     }
 }
-
