@@ -7,12 +7,11 @@
     <title>Portofolio Yuliagus </title>
     <link href="src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme:dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
-            document.documentElement, classList.remove('dark');
+            document.documentElement.classList.remove('dark');
         }
     </script>
 </head>
@@ -330,334 +329,265 @@
     <section id="portofolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
         <div class="container mx-auto px-4">
             <!-- Section Header -->
-            <div class="text-center mb-10">
+            <div class="text-center mb-16">
                 <h4 class="font-semibold text-lg text-primary mb-2" data-aos="fade-down" data-aos-duration="800">
                     Portofolio
                 </h4>
                 <h2 class="font-bold text-dark text-3xl sm:text-4xl lg:text-5xl dark:text-white" data-aos="fade-down"
                     data-aos-duration="1000" data-aos-delay="200">
-                    Project Terbaru
+                    Karya Terbaik Saya
                 </h2>
-                <p class="font-medium text-md text-secondary md:text-lg mb-4" data-aos="fade-up"
+                <p class="font-medium text-md text-secondary md:text-lg max-w-2xl mx-auto mt-4" data-aos="fade-up"
                     data-aos-duration="1000" data-aos-delay="400">
-                    Selamat datang di portofolio saya. Di sini, Anda bisa melihat hasil karya terbaru saya, mulai dari
-                    desain website, grafis, hingga tipografi.
+                    Koleksi proyek terbaik yang telah saya kerjakan, menampilkan keahlian dalam pengembangan web, desain
+                    grafis, dan tipografi.
                 </p>
-                <p class="font-medium text-md text-secondary md:text-lg" data-aos="fade-up" data-aos-duration="1000"
-                    data-aos-delay="400">
-                    Jika Anda memiliki ide atau kolaborasi yang menarik, jangan ragu untuk menghubungi saya!
-                </p>
-                <!-- Buttons -->
-                <div class="flex justify-center gap-4 mt-8">
-                    <button onclick="scrollToPortfolio('website')"
-                        class="text-sm font-medium text-white bg-primary py-2 px-4 rounded-full hover:shadow-md hover:bg-sky-700 transition duration-300 ease-in-out"
-                        data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
-                        Website
-                    </button>
-                    <button onclick="scrollToPortfolio('graphicDesign')"
-                        class="text-sm font-medium text-white bg-primary py-2 px-4 rounded-full hover:shadow-md hover:bg-sky-700 transition duration-300 ease-in-out"
-                        data-aos="fade-down" data-aos-duration="900" data-aos-delay="100">
-                        Graphic Design
-                    </button>
-                    <button onclick="scrollToPortfolio('typography')"
-                        class="text-sm font-medium text-white bg-primary py-2 px-4 rounded-full hover:shadow-md hover:bg-sky-700 transition duration-300 ease-in-out"
-                        data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
-                        Typography
-                    </button>
-                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="showPortfolioSection('website')"
+                    class="portfolio-btn active px-6 py-3 rounded-full text-sm font-medium bg-primary text-white hover:bg-sky-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                    <i class="fas fa-globe mr-2"></i>Website
+                </button>
+                <button onclick="showPortfolioSection('graphicDesign')"
+                    class="portfolio-btn px-6 py-3 rounded-full text-sm font-medium bg-primary text-white hover:bg-sky-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    data-aos="fade-down" data-aos-duration="900" data-aos-delay="100">
+                    <i class="fas fa-palette mr-2"></i>Graphic Design
+                </button>
+                <button onclick="showPortfolioSection('typography')"
+                    class="portfolio-btn px-6 py-3 rounded-full text-sm font-medium bg-primary text-white hover:bg-sky-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">
+                    <i class="fas fa-font mr-2"></i>Typography
+                </button>
             </div>
 
             <!-- Project Cards -->
             <div class="space-y-16">
-                <!-- Card 1: Website -->
-                <div id="website" class="bg-white dark:bg-dark shadow-lg rounded-xl p-8 w-full h-auto">
-                    <h3 class="font-bold text-3xl text-dark dark:text-white mb-10 text-center" data-aos="fade-down"
-                        data-aos-duration="800">
-                        Website Projects
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Website Projects -->
+                <div id="website-section" class="portfolio-section">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Project Card 1 -->
-                        <div class="project-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                            <div class="relative slideshow">
+                        <div
+                            class="group bg-white dark:bg-dark rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative">
+                            <div class="relative">
                                 <img src="src/img/portofolio/website/Screenshot (374).png" alt="Website Project 1"
-                                    class="slideshow-image w-full">
-                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                                    <button
-                                        class="prev-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9664;</button>
-                                    <button
-                                        class="next-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9654;</button>
+                                    class="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <span
+                                    class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Web
+                                    App</span>
+                                <div
+                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                    <a href="https://vgshf.github.io/pemeriksaan-kelelahan-karyawan/" target="_blank"
+                                        class="bg-white text-primary px-4 py-2 rounded-full font-bold shadow hover:bg-primary hover:text-white transition">Lihat
+                                        Detail</a>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg text-dark dark:text-white">Pemeriksaan Kelelahan
-                                    Karyawan Secara Subyektif</h4> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Website <strong>Tes Pemeriksaan Kelelahan</strong> ini membantu menganalisis tingkat
-                                    kelelahan karyawan berdasarkan input pemeriksaan. Dibangun dengan
-                                    <strong>HTML5</strong>, <strong>TailwindCSS</strong>, dan
-                                    <strong>JavaScript</strong> untuk desain responsif dan interaktif.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Fitur utama meliputi analisis tingkat kelelahan (rendah, sedang, tinggi, sangat
-                                    tinggi) dengan rekomendasi tindakan. Menampilkan informasi karyawan dalam tata letak
-                                    grid yang rapi.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Dengan visualisasi berbasis warna dan desain responsif, website ini cocok untuk
-                                    evaluasi kesehatan kerja profesional di berbagai perangkat.
-                                </p>
-                                <button
-                                    onclick="location.href='https://vgshf.github.io/pemeriksaan-kelelahan-karyawan/'"
-                                    class="bg-primary text-white px-4 py-2 rounded mt-4" target="_blank">
-                                    Visit Project
-                                </button>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg text-dark dark:text-white mb-2">Pemeriksaan Kelelahan
+                                    Karyawan</h4>
+                                <p class="text-secondary text-sm line-clamp-2 mb-4">Website analisis tingkat kelelahan
+                                    karyawan dengan fitur rekomendasi tindakan. Dibangun menggunakan HTML5, TailwindCSS,
+                                    dan JavaScript.</p>
+                                <div class="flex gap-2 mb-2">
+                                    <span class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">HTML5</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">TailwindCSS</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">JavaScript</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <a href="https://vgshf.github.io/pemeriksaan-kelelahan-karyawan/" target="_blank"
+                                        class="text-primary font-semibold hover:underline flex items-center gap-1">Lihat
+                                        Proyek <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="text-secondary hover:text-primary"><i
+                                            class="fab fa-github text-xl"></i></a>
+                                </div>
                             </div>
                         </div>
-
                         <!-- Project Card 2 -->
-                        <div class="project-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                            <div class="relative slideshow">
+                        <div
+                            class="group bg-white dark:bg-dark rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative">
+                            <div class="relative">
                                 <img src="src/img/portofolio/website/Screenshot (379).png" alt="Website Project 2"
-                                    class="slideshow-image w-full">
-                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                                    <button
-                                        class="prev-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9664;</button>
-                                    <button
-                                        class="next-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9654;</button>
+                                    class="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <span
+                                    class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Portfolio</span>
+                                <div
+                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                    <a href="https://yuliagusmy.github.io/portofolio-tailwindcss/" target="_blank"
+                                        class="bg-white text-primary px-4 py-2 rounded-full font-bold shadow hover:bg-primary hover:text-white transition">Lihat
+                                        Detail</a>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg text-dark dark:text-white">Website Portofolio</h4> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Website <strong>Portofolio Pribadi</strong> menampilkan karya dan pengalaman dalam
-                                    pengembangan web. Dibangun dengan <strong>HTML5</strong>,
-                                    <strong>TailwindCSS</strong>, dan <strong>JavaScript</strong> untuk desain modern
-                                    dan responsif.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Menampilkan proyek-proyek unggulan, keahlian teknis, dan informasi kontak untuk
-                                    kolaborasi profesional. Desain yang intuitif memudahkan pengunjung menjelajahi
-                                    portofolio.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Dengan fokus pada pengalaman pengguna dan tampilan modern, website ini mencerminkan
-                                    dedikasi dalam pengembangan web dan teknologi.
-                                </p>
-                                <button onclick="location.href='https://yuliagusmy.github.io/portofolio-tailwindcss/'"
-                                    class="bg-primary text-white px-4 py-2 rounded mt-4" target="_blank">
-                                    Visit Project
-                                </button>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg text-dark dark:text-white mb-2">Website Portofolio</h4>
+                                <p class="text-secondary text-sm line-clamp-2 mb-4">Website portofolio pribadi dengan
+                                    desain modern dan responsif. Menampilkan proyek-proyek unggulan dan informasi
+                                    kontak.</p>
+                                <div class="flex gap-2 mb-2">
+                                    <span class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">HTML5</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">TailwindCSS</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">JavaScript</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <a href="https://yuliagusmy.github.io/portofolio-tailwindcss/" target="_blank"
+                                        class="text-primary font-semibold hover:underline flex items-center gap-1">Lihat
+                                        Proyek <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="text-secondary hover:text-primary"><i
+                                            class="fab fa-github text-xl"></i></a>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <!-- Card 2: Graphic Design -->
-                <div id="graphicDesign" class="bg-white dark:bg-dark shadow-lg rounded-xl p-8 w-full h-auto">
-                    <h3 class="font-bold text-3xl text-dark dark:text-white mb-10 text-center" data-aos="fade-down"
-                        data-aos-duration="800">
-                        Graphic Design Projects
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Graphic Design Projects -->
+                <div id="graphicDesign-section" class="portfolio-section hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Project Card 1 -->
-                        <div class="project-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                            <div class="relative slideshow">
+                        <div
+                            class="group bg-white dark:bg-dark rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative">
+                            <div class="relative">
                                 <img src="src/img/portofolio/social media design/english camp (6).png"
-                                    alt="Website Project 1" class="slideshow-image w-full">
-                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                                    <button
-                                        class="prev-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9664;</button>
-                                    <button
-                                        class="next-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9654;</button>
+                                    alt="Graphic Design Project 1"
+                                    class="w-full object-cover aspect-auto transition-transform duration-500 group-hover:scale-105" />
+                                <span
+                                    class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Social
+                                    Media</span>
+                                <div
+                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                    <a href="https://www.instagram.com/hectic_uhm/?hl=en" target="_blank"
+                                        class="bg-white text-primary px-4 py-2 rounded-full font-bold shadow hover:bg-primary hover:text-white transition">Lihat
+                                        Detail</a>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg text-dark dark:text-white">HECTIC - English Camp Feed
-                                    Design
-                                </h4> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Desain <strong>Social Media Feed</strong> untuk <strong>HECTIC (Handayani English
-                                        Community Circle)</strong> dalam mempromosikan acara <strong>English
-                                        Camp</strong>. Acara ini meningkatkan kemampuan bahasa Inggris melalui kegiatan
-                                    interaktif.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Menggunakan elemen visual menarik dengan kombinasi warna cerah dan tipografi modern
-                                    untuk meningkatkan engagement di media sosial. Konten dirancang informatif dan mudah
-                                    dipahami.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Desain ini efektif dalam menjangkau target audiens dan memperkuat branding HECTIC
-                                    sebagai komunitas bahasa Inggris yang aktif.
-                                </p>
-                                <button onclick="location.href='https://www.instagram.com/hectic_uhm/?hl=en'"
-                                    class="bg-primary text-white px-4 py-2 rounded mt-4" target="_blank">
-                                    Visit Project
-                                </button>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg text-dark dark:text-white mb-2">HECTIC - English Camp</h4>
+                                <p class="text-secondary text-sm line-clamp-2 mb-4">Desain feed Instagram untuk acara
+                                    English Camp HECTIC. Menggunakan elemen visual menarik dengan kombinasi warna cerah
+                                    dan tipografi modern.</p>
+                                <div class="flex gap-2 mb-2">
+                                    <span class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">Canva</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">Photoshop</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">Illustrator</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <a href="https://www.instagram.com/hectic_uhm/?hl=en" target="_blank"
+                                        class="text-primary font-semibold hover:underline flex items-center gap-1">Lihat
+                                        Proyek <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="text-secondary hover:text-primary"><i
+                                            class="fab fa-behance text-xl"></i></a>
+                                </div>
                             </div>
                         </div>
-
                         <!-- Project Card 2 -->
-                        <div class="project-card rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                            <div class="relative slideshow">
+                        <div
+                            class="group bg-white dark:bg-dark rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative">
+                            <div class="relative">
                                 <img src="src/img/portofolio/social media design/TELKOM UNIVERSITY FIXX.png"
-                                    alt="Website Project 2" class="slideshow-image w-full">
-                                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                                    <button
-                                        class="prev-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9664;</button>
-                                    <button
-                                        class="next-btn bg-gray-700 text-white px-2 py-1 rounded-full hover:bg-gray-500">&#9654;</button>
+                                    alt="Graphic Design Project 2"
+                                    class="w-full object-cover aspect-auto transition-transform duration-500 group-hover:scale-105" />
+                                <span
+                                    class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Social
+                                    Media</span>
+                                <div
+                                    class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
+                                    <a href="https://www.instagram.com/pmm4_telkomuniversity/?hl=en" target="_blank"
+                                        class="bg-white text-primary px-4 py-2 rounded-full font-bold shadow hover:bg-primary hover:text-white transition">Lihat
+                                        Detail</a>
                                 </div>
                             </div>
-                            <div class="p-4">
-                                <h4 class="font-semibold text-lg text-dark dark:text-white">PMM 4 Telkom University Feed
-                                </h4> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Feed Instagram untuk <strong>Pertukaran Mahasiswa Merdeka Batch 4</strong> oleh
-                                    <strong>Telkom University</strong>. Desain menggunakan latar merah dengan elemen
-                                    budaya Indonesia untuk menonjolkan keberagaman.
-                                </p> <br>
-                                <p class="text-sm text-secondary text-justify">
-                                    Menampilkan logo berbagai universitas sebagai simbol kolaborasi antar perguruan
-                                    tinggi. Informasi akun media sosial <strong>@pmm4.telkomuniversity</strong> dan
-                                    <strong>@telkomuniversity</strong> ditampilkan dengan jelas.
-                                </p>
-                                <button onclick="location.href='https://www.instagram.com/pmm4_telkomuniversity/?hl=en'"
-                                    class="bg-primary text-white px-4 py-2 rounded mt-4" target="_blank">
-                                    Visit Project
-                                </button>
+                            <div class="p-6">
+                                <h4 class="font-bold text-lg text-dark dark:text-white mb-2">PMM 4 Telkom University
+                                </h4>
+                                <p class="text-secondary text-sm line-clamp-2 mb-4">Feed Instagram untuk Pertukaran
+                                    Mahasiswa Merdeka Batch 4. Desain menggunakan latar merah dengan elemen budaya
+                                    Indonesia.</p>
+                                <div class="flex gap-2 mb-2">
+                                    <span class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">Canva</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">Photoshop</span>
+                                    <span
+                                        class="bg-slate-100 dark:bg-slate-700 rounded px-2 py-1 text-xs">Illustrator</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <a href="https://www.instagram.com/pmm4_telkomuniversity/?hl=en" target="_blank"
+                                        class="text-primary font-semibold hover:underline flex items-center gap-1">Lihat
+                                        Proyek <i class="fas fa-arrow-right"></i></a>
+                                    <a href="#" class="text-secondary hover:text-primary"><i
+                                            class="fab fa-behance text-xl"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Typography Projects Section -->
-                <div id="typography" class="bg-white dark:bg-dark shadow-lg rounded-xl p-8 w-full">
-                    <!-- Section Title -->
+                <!-- Typography Projects -->
+                <div id="typography-section"
+                    class="portfolio-section hidden bg-white dark:bg-dark shadow-lg rounded-xl p-8 w-full">
                     <h3 class="font-bold text-3xl text-dark dark:text-white mb-10 text-center" data-aos="fade-down"
                         data-aos-duration="800">
                         Typography Projects
                     </h3>
-
-                    <!-- Typography Grid Container -->
-                    <div class="container mx-auto overflow-hidden">
-                        <div class="scroll-loop flex gap-6">
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography1.png" alt="Typography Project 1"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography2.png" alt="Typography Project 2"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography3.png" alt="Typography Project 3"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography4.png" alt="Typography Project 4"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography5.png" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography17.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography18.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography19.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography20.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography8.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography9.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography10.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography11.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
+                    <div
+                        class="typography-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography1.png" alt="Typography Project 1"
+                                class="w-full h-auto object-cover aspect-auto" />
                         </div>
-                    </div>
-                    <br>
-                    <!-- Typography Grid Container -->
-                    <div class="container mx-auto overflow-hidden px-6">
-                        <div class="scroll-loop flex gap-6">
-                            <!-- Typography Cards -->
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography8.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography9.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography10.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography11.jpg" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography12.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography13.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography14.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography15.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography16.webp" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography1.png" alt="Typography Project 1"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography2.png" alt="Typography Project 2"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography3.png" alt="Typography Project 3"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography4.png" alt="Typography Project 4"
-                                    class="w-full h-auto">
-                            </div>
-                            <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                                <img src="src/img/portofolio/typography/typography5.png" alt="Typography Project 5"
-                                    class="w-full h-auto">
-                            </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography2.png" alt="Typography Project 2"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography3.png" alt="Typography Project 3"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography4.png" alt="Typography Project 4"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography5.png" alt="Typography Project 5"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography17.webp" alt="Typography Project 6"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography18.jpg" alt="Typography Project 7"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography19.webp" alt="Typography Project 8"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography20.webp" alt="Typography Project 9"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography8.jpg" alt="Typography Project 10"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography9.jpg" alt="Typography Project 11"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography10.jpg" alt="Typography Project 12"
+                                class="w-full h-auto object-cover aspect-auto" />
+                        </div>
+                        <div class="min-w-[300px] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                            <img src="src/img/portofolio/typography/typography11.jpg" alt="Typography Project 13"
+                                class="w-full h-auto object-cover aspect-auto" />
                         </div>
                     </div>
                 </div>
@@ -665,7 +595,6 @@
         </div>
     </section>
     <!-- Portofolio End -->
-
 
     <!-- Client Section Start -->
     <section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-white">
@@ -1009,16 +938,12 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000, // Durasi animasi default
-            once: true,     // Animasi hanya terjadi sekali
+            duration: 1000,
+            once: true,
         });
     </script>
     <script src="src/js/script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <script src="src/js/portfolio.js"></script>
 </body>
 
 </html>

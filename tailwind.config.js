@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html', './src/**/*.{html,js}'], // Mendukung semua file HTML dan JS
-  darkMode: 'class', // Mendukung dark mode berbasis class
+  content: [
+    "./index.html",
+    "./src/**/*.{html,js,css}",
+    "./src/**/*.js",
+  ],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
